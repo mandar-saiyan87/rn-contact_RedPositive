@@ -13,11 +13,12 @@ function ContactForm() {
     message: ""
   });
 
-
+  // Email validation
   function emailValid(email) {
     return /\S+@\S+\.\S+/.test(email);
   }
 
+  //Mobile no validation
   function mobileValid(number) {
     const reg = /^[789]\d{9,9}$/g
     return reg.test(number)
