@@ -1,12 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import ContactForm from './components/screens/ContactForm';
+import { NavigationContainer } from '@react-navigation/native';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Contact Us" component={ContactForm} options={{
+          headerStyle: {
+            backgroundColor: '#b897d8'
+          },
+          headerTintColor: 'white'
+        }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
